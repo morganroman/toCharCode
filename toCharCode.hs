@@ -10,7 +10,7 @@ main = do
    putStrLn $ output toConvert
   
   xs -> do
-   putStrLn $ foldr1 (\acc x -> acc ++ "\n" ++ x) $ map output xs
+   putStrLn $ output $ foldr1 (\acc x -> acc ++ " " ++ x) xs -- interpret spaces as spaces, this doesn't understand semicolons
 
 output :: [Char] -> [Char]
 output str = beginning ++ (toOrd str) ++ ending
